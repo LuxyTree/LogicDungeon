@@ -6,12 +6,13 @@ public class ShovelCollisionDetection : MonoBehaviour
 {
     public WeaponController wc;
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if(other.tag == "Dirt" && wc.IsAttacking == true)
+        if (collision.gameObject.tag == "Dirt" && wc.IsAttacking == true)
         {
-            Debug.Log(other.name);
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            Debug.Log("Detected Collision");
         }
     }
 }
