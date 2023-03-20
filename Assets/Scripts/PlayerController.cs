@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("Tutorial Level");
             Debug.Log("Detected Water");
         }
+        if (collision.gameObject.tag == "Win")
+        {
+            SceneManager.LoadScene("MEDLevel");
+            Debug.Log("Detected Win");
+        }
     }
 
     void FixedUpdate()
