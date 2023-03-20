@@ -11,7 +11,7 @@ public class ShovelCollisionDetection : MonoBehaviour
         if (collision.gameObject.tag == "Dirt" && wc.IsAttacking == true)
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("Detected Collision");
         }
     }

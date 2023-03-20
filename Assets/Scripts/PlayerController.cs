@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,36 @@ public class PlayerController : MonoBehaviour
     {
         GatherInput();
         Look();
+
+        if (Input.GetKey(KeyCode.I))
+        {
+            SceneManager.LoadScene("Tutorial Level");
+        }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            SceneManager.LoadScene("MEDLevel");
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            SceneManager.LoadScene("HARDLevel");
+        }
+
+        if (Input.GetKey(KeyCode.X))
+        {
+            Application.Quit();
+        }
+        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            SceneManager.LoadScene("Tutorial Level");
+            Debug.Log("Detected Water");
+        }
     }
 
     void FixedUpdate()
