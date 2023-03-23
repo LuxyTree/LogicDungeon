@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
         {
             Application.Quit();
         }
-        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -49,6 +48,16 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Win")
         {
             SceneManager.LoadScene("MEDLevel");
+            Debug.Log("Detected Win");
+        }
+        if (collision.gameObject.tag == "Win2")
+        {
+            SceneManager.LoadScene("HARDLevel");
+            Debug.Log("Detected Win");
+        }
+        if (collision.gameObject.tag == "Win3")
+        {
+            SceneManager.LoadScene("Menu");
             Debug.Log("Detected Win");
         }
     }

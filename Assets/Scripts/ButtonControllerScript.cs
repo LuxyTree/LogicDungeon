@@ -21,4 +21,30 @@ public class ButtonControllerScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    void Update()
+    {
+
+        if (Input.GetKey(KeyCode.I))
+        {
+            SceneManager.LoadScene("Tutorial Level");
+        }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            SceneManager.LoadScene("MEDLevel");
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            SceneManager.LoadScene("HARDLevel");
+        }
+
+        if (Input.GetKey(KeyCode.X))
+        {
+            Application.Quit();
+        }
+
+    }
+
 }
