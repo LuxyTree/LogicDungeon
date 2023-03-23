@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _turnSpeed = 360;
     private Vector3 _input;
 
+
     void Update()
     {
         GatherInput();
